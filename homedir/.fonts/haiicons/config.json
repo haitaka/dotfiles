@@ -1,0 +1,82 @@
+{
+  "name": "haiicons",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "005a38f6af74b31aeb817fedb09d2175",
+      "css": "keyboard",
+      "code": 59403,
+      "src": "entypo"
+    },
+    {
+      "uid": "413717f5ea649e8d8b93938be277264a",
+      "css": "calendar",
+      "code": 59402,
+      "src": "entypo"
+    },
+    {
+      "uid": "f378encthmyxe8mfi1ute1knv09ggkar",
+      "css": "bat1",
+      "code": 59401,
+      "src": "typicons"
+    },
+    {
+      "uid": "jslb32twsd38zgx4v3sm5upu0t6wirtm",
+      "css": "bat2",
+      "code": 59400,
+      "src": "typicons"
+    },
+    {
+      "uid": "g43j86b0hso37oir42285zjo3nhd7m08",
+      "css": "bat3",
+      "code": 59399,
+      "src": "typicons"
+    },
+    {
+      "uid": "7wc8mz5d93cbka5pscqjhsej173tqmbs",
+      "css": "bat4",
+      "code": 59398,
+      "src": "typicons"
+    },
+    {
+      "uid": "bc1u8zgs4wteyj0u35n943k3jzx5olkm",
+      "css": "bat-charge",
+      "code": 59397,
+      "src": "typicons"
+    },
+    {
+      "uid": "5840fe162df3bcc8e390c58ef4e2acf9",
+      "css": "sun-filled",
+      "code": 59396,
+      "src": "typicons"
+    },
+    {
+      "uid": "8489d61496923b1159b01d8a0a7b2df0",
+      "css": "volume-off",
+      "code": 59392,
+      "src": "elusive"
+    },
+    {
+      "uid": "5d9730dc93976d27eb07914eab50a507",
+      "css": "volume-down",
+      "code": 59393,
+      "src": "elusive"
+    },
+    {
+      "uid": "b59b3b618699b467541f631edd5a02ed",
+      "css": "volume",
+      "code": 59394,
+      "src": "elusive"
+    },
+    {
+      "uid": "012ff5762ccb18c16bdfdd6baf187406",
+      "css": "volume-up",
+      "code": 59395,
+      "src": "elusive"
+    }
+  ]
+}
