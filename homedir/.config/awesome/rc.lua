@@ -409,21 +409,24 @@ client.connect_signal("unfocus", function(c)
 end)
 -- }}}
 
-
-
-
-function run_once(cmd)
-    findme = cmd
-    firstspace = cmd:find(" ")
-    if firstspace then
-        findme = cmd:sub(0, firstspace-1)
+function run_once(prg,arg_string,pname,screen)
+    if not prg then
+        do return nil end
     end
-    awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
+
+    if not pname then
+       pname = prg
+    end
+
+    if not arg_string then 
+        awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. "' || (" .. prg .. ")",screen)
+    else
+        awful.util.spawn_with_shell("pgrep -f -u $USER -x '" .. pname .. " ".. arg_string .."' || (" .. prg .. " " .. arg_string .. ")",screen)
+    end
 end
 
---awful.util.spawn("run_once nm-applet && udiskie --tray'")
 run_once("nm-applet")
-run_once("udiskie --tray")
+run_once("udiskie", "--tray")
 --awful.util.spawn("run_once nm-applet")
 --awful.util.spawn("run_once ")
 
