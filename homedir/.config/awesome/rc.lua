@@ -76,11 +76,11 @@ local layouts =
 }
 
 -- Wallpaper
---if beautiful.wallpaper then
---    for s = 1, screen.count() do
---        gears.wallpaper.maximized("/home/haitaka/pictures/wallpaper.jpg", s, true)
---    end
---end
+if beautiful.wallpaper then
+    for s = 1, screen.count() do
+        gears.wallpaper.maximized("/home/haitaka/pictures/wallpaper.jpg", s, true)
+    end
+end
 -- }}}
 
 
