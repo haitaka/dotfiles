@@ -76,11 +76,11 @@ local layouts =
 }
 
 -- Wallpaper
-if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.maximized("/home/haitaka/pictures/wallpaper.jpg", s, true)
-    end
-end
+--if beautiful.wallpaper then
+--    for s = 1, screen.count() do
+--        gears.wallpaper.maximized("/home/haitaka/pictures/wallpaper.jpg", s, true)
+--    end
+--end
 -- }}}
 
 
@@ -103,7 +103,9 @@ end
  
 
 -- {{{ Wibox
-
+    
+widgets.backlight:init({})
+widgets.battery:init({device = 'BAT1'})
 widgets.kblayout:init({})
 widgets.volume:init({step = 5})
 
@@ -173,7 +175,9 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(widgets.kblayout.bar)
+    right_layout:add(widgets.backlight.bar)
     right_layout:add(widgets.volume.bar)
+    right_layout:add(widgets.battery.bar)
     right_layout:add(widgets.textclock)
     right_layout:add(widgets.layoutbox[s])
 
@@ -264,7 +268,10 @@ globalkeys = awful.util.table.join(
     
     awful.key({}, "XF86AudioRaiseVolume", function() widgets.volume:inc() end),
     awful.key({}, "XF86AudioLowerVolume", function() widgets.volume:dec() end),
-    awful.key({}, "XF86AudioMute",        function() widgets.volume:toggle() end)
+    awful.key({}, "XF86AudioMute",        function() widgets.volume:toggle() end),
+    
+    awful.key({}, "XF86MonBrightnessUp",   function() widgets.backlight:inc() end),
+    awful.key({}, "XF86MonBrightnessDown", function() widgets.backlight:dec() end)
 )
 
 clientkeys = awful.util.table.join(
