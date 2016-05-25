@@ -91,7 +91,7 @@ end
  tags = {
    names  = { "1-www", "2-dev", "3-steam", "4-media", "5-im", 
               6, 7, 8, "9-term" },
-   layout =   { layouts[2], layouts[5], layouts[10], layouts[2], layouts[2],
+   layout =   { layouts[2], layouts[5], layouts[1], layouts[2], layouts[2],
                 layouts[2], layouts[2], layouts[2], layouts[2]}
  }
  for s = 1, screen.count() do
@@ -366,6 +366,7 @@ awful.rules.rules = {
     { rule = { class = "Kate" },        properties = { tag = tags[1][2] } },
     { rule = { class = "kate" },        properties = { tag = tags[1][2] } },
     { rule = { class = "Steam" },       properties = { tag = tags[1][3] } },
+    { rule = { class = "Steam.exe" },   properties = { tag = tags[1][3] } },
     { rule = { class = "Vlc" },         properties = { tag = tags[1][4] } },
     { rule = { class = "Telegram" },    properties = { tag = tags[1][5] } },
     { rule = { class = "skype" },       properties = { tag = tags[1][5] } },

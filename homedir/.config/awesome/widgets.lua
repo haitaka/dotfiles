@@ -190,6 +190,9 @@ local widgets = {}
             self:c_connect(client)
             local cmd = string.format("setxkbmap %s", self.client_layout[client])
             assert(io.popen(cmd))
+        else
+            local cmd = string.format("setxkbmap %s", self.layouts[1])
+            assert(io.popen(cmd))
         end
         self:bar_update(client)
     end
@@ -205,7 +208,7 @@ local widgets = {}
         self:c_focus(client)
     end
     function widgets.kblayout:bar_update(client)
-        local layout_str = self.client_layout[client] or '--'
+        local layout_str = self.client_layout[client] or 'us'
 
         local markup = utils.format_bar_entry(self.label.text, layout_str, self.label.color, self.label.font)
         
