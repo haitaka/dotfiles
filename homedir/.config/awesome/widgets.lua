@@ -185,15 +185,30 @@ local widgets = {}
         end
     end
     function widgets.kblayout:c_focus(client)
+        map_list = ""
         if client
         then
             self:c_connect(client)
-            local cmd = string.format("setxkbmap %s", self.client_layout[client])
-            assert(io.popen(cmd))
+            map_list = self.client_layout[client]
+            for i, map in ipairs(self.layouts)
+            do
+                if map ~= self.client_layout[client] 
+                then
+                    map_list = map_list .. "," .. map
+                end
+            end
         else
-            local cmd = string.format("setxkbmap %s", self.layouts[1])
-            assert(io.popen(cmd))
+            map_list = self.layouts[1]
+            for i, map in ipairs(self.layouts)
+            do
+                if map ~= self.layouts[1]
+                then
+                    map_list = map_list .. "," .. map
+                end
+            end
         end
+        local cmd = string.format("setxkbmap -option caps:hyper \"%s\"", map_list)
+        assert(io.popen(cmd))
         self:bar_update(client)
     end
     function widgets.kblayout:change(client)
